@@ -1,0 +1,5 @@
+SQLALCHEMY_DATABASE_URI="mysql+pymysql://root:root@127.0.0.1/python_test_1"
+SQLALCHEMY_TRACK_MODIFICATIONS=True
+SECRET_KEY="201528"
+DEBUG=True
+
