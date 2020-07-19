@@ -1,6 +1,6 @@
 from app import *
 from tools import MyMongo
-from flask import Blueprint
+from flask import Blueprint,jsonify
 user = Blueprint("user", __name__)  # 实例化一个蓝图(Blueprint)对象)
 
 @user.route('/register/',methods=['GET','POST'])
