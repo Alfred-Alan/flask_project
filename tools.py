@@ -16,13 +16,13 @@ import redis
 my_mail = '3210440292@qq.com'
 # 授权码
 my_pass = 'xbxhxcdlpsmadgga'
-# host='0.0.0.0'
+host='0.0.0.0'
 # 短信应用SDK AppID
 appid = 1400373174   # SDK AppID是1400开头
 # 短信应用SDK AppKey
 appkey = "7b8eebd19d6600c45333aba5ab62796d"
 
-host = "localhost"
+# host = "localhost"
 
 class My_mysql:
     def __init__(self, path='localhost', port=3306, user='root', password="", db=None):

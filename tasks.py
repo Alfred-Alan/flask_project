@@ -1,4 +1,3 @@
-import threading
 import upyun
 from tools import MyMongo
 from tools import host

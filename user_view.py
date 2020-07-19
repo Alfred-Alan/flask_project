@@ -16,7 +16,7 @@ def post_login():
     username = request.form.get('username', None)
     # 用户密码
     password = request.form.get('password', None)
-    with MyMongo(path="127.0.0.1", port=27017, db='md', table='user')as c:
+    with MyMongo(path=host, port=27017, db='md', table='user')as c:
         user_list = list(c.find({'username':username,'password':password},{'_id':0}))
         if user_list:
             if int(password) != int(user_list[0]['password']):
