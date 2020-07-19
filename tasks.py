@@ -28,10 +28,10 @@ def upload_file(title,file,name):
 		if res:
 			img_list=res  # 读取添加
 			img_list.append(name)
-			c.update_one({'order_name': '测试'}, {'$set': {'fileList': img_list}})
+			c.update_one({'order_name': title}, {'$set': {'fileList': img_list}})
 			print('添加')
 		else:
 			img_list.append(name) # 正常添加
-			c.update_one({'order_name': '测试'}, {'$set': {'fileList': img_list}})
+			c.update_one({'order_name': title}, {'$set': {'fileList': img_list}})
 			print('新增')
 	return '成功'
