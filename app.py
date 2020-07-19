@@ -2,12 +2,12 @@ from flask import *
 from flask_sqlalchemy import *
 from flask_cors import CORS
 
-app=Flask(__name__)
+app = Flask(__name__)
 app.config.from_pyfile("config.py")
 db=SQLAlchemy(app)
 
 
-# 允许跨域
+# 允许跨域
 CORS(app, supports_credentials=True)
 
 import time

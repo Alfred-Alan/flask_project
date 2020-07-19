@@ -1,12 +1,13 @@
 
 from app import *
-
 import user_view
 import get_order
 import add_order
+import nummber_register
 app.register_blueprint(user_view.user)
 app.register_blueprint(get_order.orders)
 app.register_blueprint(add_order.order)
+app.register_blueprint(nummber_register.number)
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -24,4 +25,4 @@ def get_file(file_name):
         return f"文件读取异常{e}"
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0",port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5000)
