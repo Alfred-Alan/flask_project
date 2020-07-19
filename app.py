@@ -35,4 +35,3 @@ celery.conf.beat_schedule = {
     # },
 
 }
-
