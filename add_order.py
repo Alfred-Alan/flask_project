@@ -44,9 +44,21 @@ def add_order():
             p_str = pickle.dumps(file)
             suffix = file.filename[file.filename.rfind('.'):]
             filename = str(uuid.uuid4())+suffix
-
             file.save('./static/'+filename)
-            tasks.upload_file.delay(order_name,str(p_str), filename)
+
+            with MyMongo(path=host, port=27017, db='md', table='order')as c:
+                res = dict(c.find_one({'order_name': order_name}, {'_id': 0}))['fileList']
+                img_list = []
+                # 如果存在
+                if res:
+                    img_list = res  # 读取添加
+                    img_list.append(filename)
+                    c.update_one({'order_name': order_name}, {'$set': {'fileList': img_list}})
+                    print('添加')
+                else:
+                    img_list.append(filename)  # 正常添加
+                    c.update_one({'order_name': order_name}, {'$set': {'fileList': img_list}})
+                    print('新增')
 
     return jsonify({'code': 200})
 
