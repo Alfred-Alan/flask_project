@@ -1,3 +1,3 @@
-workers = 3    # è¿›ç¨‹æ•°
-worker_class = "gevent"   # å¼‚æ­¥æ¨¡å¼
+workers = 3    # ½ø³ÌÊı
+worker_class = "gevent"   # Òì²½Ä£Ê½
 bind = "0.0.0.0:5000"
