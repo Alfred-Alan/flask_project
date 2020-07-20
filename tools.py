@@ -1,7 +1,7 @@
 import pymongo
 import pymysql
 import redis
-host='0.0.0.0'
+host='47.105.205.151'
 # host = "localhost"
 
 class My_mysql:
